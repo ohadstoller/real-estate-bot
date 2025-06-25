@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { HttpModule } from '@nestjs/axios';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { OpenaiModule } from './openai/openai.module';
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { AppService } from './app.service';
       envFilePath: ['.env.local', '.env'],
     }),
     HttpModule,
+    OpenaiModule,
   ],
   controllers: [AppController],
   providers: [AppService],
